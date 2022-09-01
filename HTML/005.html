@@ -29,3 +29,43 @@ HTML은 document element 즉, 문서의 최상위 요소입니다. lang 속성�
 - `**name="description"**` : 페이지에 대한 설명 정보를 나타냅니다. 검색엔진이 사용자에게 결과 화면을 출력할 때 중요한 고려 요소입니다.
 - `**name="viewport"` :** 모바일 장치에서 사용자 화면의 사이즈에 대한 값을 설정합니다. 필수는 아니지만 스마트폰이나 태블릿 같은 모바일 기기에서도 많은 접속이 이뤄지는 요즘은 반드시 넣어주는게 좋습니다.
 - `**http-equiv="X-UA-Compatible”**` : 프라그마 지시문(*pragma directive : 컴파일러에게 특정 기능을 지정*)이라고 합니다. 브라우저에 어떤 행동을 지시하려는 목적으로 사용합니다. `**X-UA-Compatible`** 속성값은 IE브라우저에서 페이지를 어떠한 형식으로 랜더링할지 지정할 수 있으며 `content='IE=edge'`는 IE8 버전 이상에서 항상 표준모드로 랜더링 되도록 합니다. -->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>section grouping</title>
+</head>
+<body>
+    <header>헤더
+        <h1>heading on</h1>
+        <h2>heading on</h2>
+        <h3>heading on</h3>
+        <h4>heading on</h4>
+        <h5>heading on</h5>
+        <h6>heading on</h6>
+        <nav>
+            nav(네비게이션, 탐색) 요소는 현재 페이지 내, 또는 다른 페이지로의 링크를 보여주는 구획을 나타냅니다. 보통 메뉴에 사용
+            <ul>
+                <li>ul의 자식요소는 반드시 li여야 한다</li>
+            </ul>
+        </nav>
+    </header>
+    <main>메인
+        <section>
+            일반적으로 연관성 있는 문서의 구획을 나누고자 할 때 사용하는 요소입니다.
+            문서에서 일반적인 섹션의 의미입니다. 하나의 주제로 그룹화된 컨텐츠를 담습니다. 각 섹션의 주제는 일반적으로 섹션 요소의 하위항목으로 제목을 포함시켜 식별해야한다
+        </section>
+        <article>독립적으로 구분하거나 재사용할 수 있는 구획, 다른 곳에서 단독으로 사용이 가능한 내용을 담는 엘리먼트 ex)잡지의 기사, 포럼이나 블로그 게시글, 사용자 댓글, 위젯 등... 중첩해서 사용할 경우 하위의 article은 상위 article에 관련된 내용</article>
+        <aside>
+            페이지의 주요 내용의 흐름과 관련 없는 다른 내용 나타냄, 주로 사이드바 형태의 디자인, 각주에는 aside 사용하지 않는다
+        </aside>
+    </main>
+    <footer>footer 요소가 속한 가장 가까운 구획의 작성자 정보, 저작권, 관련된 링크 등의 내용을 담는 구획 요소입니다.</footer>
+<script>
+</script>
+</body>
+</html>
