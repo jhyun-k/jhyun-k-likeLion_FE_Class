@@ -1,0 +1,21 @@
+ul,li{
+    list-style: none;
+}
+
+.wrapper{
+    width: 1280px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+}
+
+ul li{
+    margin: 20px;
+}
