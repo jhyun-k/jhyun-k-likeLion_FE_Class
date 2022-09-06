@@ -9,8 +9,13 @@ body{
     background-image: url(images/bg.png);
 }
 
-.fox_img{
+.img{
     text-align: center;
+}
+.img img{
+    display: block;
+    margin: auto;
+    z-index: 1212
 }
 
 .ground{
@@ -18,12 +23,14 @@ body{
     margin: 0 auto;
     background-color: #9E6236;
     color: white;
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
     box-shadow: 0 10px 0  #41210a ;
+    z-index: -1;
+
 }
 
 .ground h1,p{
-    margin: 10px 20px;
+    margin: 0 20px;
 }
 .ground p{
     padding-bottom: 30px;
