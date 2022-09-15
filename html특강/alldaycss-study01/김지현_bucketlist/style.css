@@ -48,14 +48,8 @@ body{
     margin-bottom: 30px;
 }
 
-/* 두번째꺼 디폴트를 파란색으로 하기 코드 */
-/* .list li:nth-child(2) {
+.list .new{
     color: #1E91FF;
     border: 4px solid #1E91FF;
-} */
 
-/* hover 했을 때 색깔 바뀌는 코드 */
-.list li:hover{
-    color: #1E91FF;
-    border: 4px solid #1E91FF;
 }

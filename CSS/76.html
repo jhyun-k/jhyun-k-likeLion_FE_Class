@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* align-items는 stretch가 기본값이다. 부모의 높이를 갖게된다. */
+            .blue_box{
+                width: 200px;
+                height: 200px;
+                background-color: #8badd9;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .orange_box{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='blue_box'>
+            <div class='orange_box'>
+            </div>
+        </div>
+    </body>
+</html>
