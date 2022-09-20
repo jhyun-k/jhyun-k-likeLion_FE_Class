@@ -52,13 +52,14 @@ body{
 }
 
 .content:nth-child(2){
+	flex-direction: row-reverse;
 	justify-content: space-between;
 }
 .content img{
 	width: 26%;	
 }
 
-.content ul{
+.content h2{
 	margin:24px 24px 32px 24px;
 	font-size: 18px;
 	color: #673399;
@@ -79,7 +80,7 @@ body{
 	position: absolute;
 	font-size: 30px;
 }
-.craft{
+/* .craft{
 	color: white;
 	text-align: center;
 	width: 280.8px;
@@ -89,7 +90,7 @@ body{
 	position: absolute;
 	right: 0;
 	font-size: 30px;
-}
+} */
 
 .content li::before{
 	content: '';
