@@ -76,21 +76,10 @@ body{
 	width: 280.8px;
 	height: 187.2px;
 	line-height: 187.2px;
-	background-color:#683399a2 ;
+	background-color:#68339976 ;
 	position: absolute;
 	font-size: 30px;
 }
-/* .craft{
-	color: white;
-	text-align: center;
-	width: 280.8px;
-	height: 187.2px;
-	line-height: 187.2px;
-	background-color:#683399a2 ;
-	position: absolute;
-	right: 0;
-	font-size: 30px;
-} */
 
 .content li::before{
 	content: '';
