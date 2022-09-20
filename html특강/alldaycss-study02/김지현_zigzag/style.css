@@ -15,6 +15,10 @@ body{
 	margin:auto;
 }
 
+.orange{
+	background: linear-gradient(to top, #ff4500 50%, transparent 50%);
+  }
+
 .title .main_txt{
 	color: white;
 	font-size: 40px;
@@ -22,9 +26,10 @@ body{
 
 .title .sub_txt{
 	color: #bd8fe8;
+	line-height: 1.5;
 }
 .line{
-	width: 200px;
+	width: 80px;
 	height: 2px;
 	background-color: #bd8fe8;
 	display: block;
@@ -41,8 +46,9 @@ body{
 .content{
 	display: flex;
 	background-color: white;
-	margin: 24px 0;
+	margin: 24px 0 0;
 	justify-content: flex-start;
+	position: relative;
 }
 
 .content:nth-child(2){
@@ -53,14 +59,36 @@ body{
 }
 
 .content ul{
-	padding: 24px;
+	margin:24px 24px 32px 24px;
 	font-size: 18px;
 	color: #673399;
 	font-weight: 700;
 }
 .content li {
-	padding:5px 24px;
+	margin:20px 0 0 24px;
+	font-size: 14px;
+}
 
+.cover{
+	color: white;
+	text-align: center;
+	width: 280.8px;
+	height: 187.2px;
+	line-height: 187.2px;
+	background-color:#683399a2 ;
+	position: absolute;
+	font-size: 30px;
+}
+.craft{
+	color: white;
+	text-align: center;
+	width: 280.8px;
+	height: 187.2px;
+	line-height: 187.2px;
+	background-color:#683399a2 ;
+	position: absolute;
+	right: 0;
+	font-size: 30px;
 }
 
 .content li::before{
@@ -71,5 +99,9 @@ body{
 	display: inline-block;
 	border-radius: 50%;
 	margin-right: 10px;
+}
+
+.reference{
+	margin-bottom: 100px;
 }
 
