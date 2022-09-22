@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* input 사라지게 하는 코드 */
+        .txt-hide{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        .labl-hold::before{
+            display: inline-block;/* 가상요소는 기본적으로 속성이 inline */
+            content: '';
+            width: 22px;
+            height: 22px;
+            vertical-align: -5px;
+            background: url(./images/check_sprite.png) -52px -10px / 84px 42px;
+            /* background: url(./images/icon_check_empty.png); */
+            /* background: url(./images/css_sprites.png) -52px -10px; */
+        }
+        .inp-hold:checked+.labl-hold::before{
+            background: url(./images/check_sprite.png) -10px -10px / 84px 42px;
+            /* background: url(./images/icon_check.png); */
+            /* background: url(./images/css_sprites.png) -10px -10px; */
+            width: 22px; height: 22px;
+        }
+        /* sprite 기법 사용하기 */
+
+        .inp-hold:focus+.labl-hold::before{
+            outline: 2px solid #000;
+            outline-offset: 3px;
+            /* outline은 레이아웃에 영향 안미친다, border 쓰면 레이아웃이 밀린다. box-sizing : borderbox 해도 이미지 밀림*/
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id='inpHold' class='inp-hold txt-hide'>
+    <label for="inpHold" class='labl-hold'>선택해주세요</label>
+</body>
+</html>
