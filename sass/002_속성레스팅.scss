@@ -1,0 +1,9 @@
+//Scss 요런식으로 속성도 중첩이 가능하다~ background 라는 말 계속 안 써도 돼
+.add-icon {
+    background : {
+      image: url("./assets/arrow-right-solid.svg");
+      position: center center;
+      repeat: no-repeat;
+      size: 14px 14px;
+    }
+  }
