@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title></title>
     <link rel="stylesheet" href="/CSS/reset.css">
     <style>
-        .cont-box{
+        .cont-box {
             width: 200px;
             margin: 100px auto;
         }
-        .btn-select{
+
+        .btn-select {
             width: 100%;
             padding: 11px 13px;
             font-size: 14px;
@@ -27,20 +29,23 @@
             text-overflow: ellipsis;
             overflow:hidden; */
         }
-        .btn-select:focus{
+
+        .btn-select:focus {
             outline: 3px solid #F8E4FF;
         }
-        .btn-select.on{
+
+        .btn-select.on {
             background: url(./img/icon-Triangle-up.png) right 12px center no-repeat;
         }
-        .list-member.on{
+
+        .list-member.on {
             display: block;
             position: relative;
             box-sizing: border-box;
             width: 200px;
             height: 208px;
             border: 1px solid #C4C4C4;
-            box-shadow: 4px 4px 14px rgba(0, 0,0, 0.15);
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
             border-radius: 10px;
             margin-top: 13px;
             display: flex;
@@ -48,7 +53,8 @@
             justify-content: center;
             align-items: center;
         }
-        .list-member button{
+
+        .list-member button {
             box-sizing: border-box;
             background-color: #fff;
             width: 198px;
@@ -56,46 +62,49 @@
             border: none;
             border-radius: 10px;
         }
-        .list-member button:hover{
+
+        .list-member button:hover {
             width: 184px;
             height: 30px;
             margin: 5px 0;
             background-color: #f8e4ff;
             border-radius: 8px;
-            border:1px solid transparent
+            border: 1px solid transparent
         }
+
         .list-member {
             display: none;
-        }   
-
+        }
     </style>
 </head>
-<body>
-<article class='cont-box'>
-    <button class="btn-select">최애프로그래밍 언어</button>
-    <ul class="list-member">
-        <li><button type="button">Python</button></li>
-        <li><button type="button">Java</button></li>
-        <li><button type="button">JavaScript</button></li>
-        <li><button type="button">C#</button></li>
-        <li><button type="button">C/C++</button></li>
-    </ul>
-</article>
 
-<script>
-    const btn = document.querySelector('.btn-select');
-    const list = document.querySelector('.list-member');
-    btn.addEventListener('click', () => {
-        list.classList.toggle('on');
-        btn.classList.toggle('on');
-    });
-    list.addEventListener('click', (event) => {
-        if (event.target.nodeName === "BUTTON") {
-            btn.textContent = event.target.textContent;
-            list.classList.remove('on');
-        }
-    });
-</script>    
-</script>
+<body>
+    <article class='cont-box'>
+        <button class="btn-select">최애프로그래밍 언어</button>
+        <ul class="list-member">
+            <li><button type="button">Python</button></li>
+            <li><button type="button">Java</button></li>
+            <li><button type="button">JavaScript</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li>
+        </ul>
+    </article>
+
+    <script>
+        const btn = document.querySelector('.btn-select');
+        const list = document.querySelector('.list-member');
+        btn.addEventListener('click', () => {
+            list.classList.toggle('on');
+            btn.classList.toggle('on');
+        });
+        list.addEventListener('click', (event) => {
+            if (event.target.nodeName === "BUTTON") {
+                btn.textContent = event.target.textContent;
+                list.classList.remove('on');
+            }
+        });
+    </script>
+    </script>
 </body>
+
 </html>
