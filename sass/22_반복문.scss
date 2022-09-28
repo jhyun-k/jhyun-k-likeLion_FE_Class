@@ -1,0 +1,11 @@
+@for $i from 1 through 5 {
+    .photo-box:nth-child(#{$i}) {
+        background-image: url("../assets/phoster#{$i}.png");
+    }
+}
+
+@for $jihyun from 1 through 3 {
+    .photo-box:nth-child(#{$jihyun}){
+        background-image: url('../assets/poster#{$jihyun.png');
+    }
+}

@@ -1,0 +1,21 @@
+// sass 참고서의 예제
+// $hojun: 5;
+// @while $hojun > 1 {
+//     $hojun: $hojun - 1;
+//     .content-#{$hojun} {
+//         width: 100px;
+//         height: 100px;
+//         background-color: red;
+//     }
+// }
+
+$jihyun : 10;
+@while $jihyun > 1 {
+    $jihyun : $jihyun - 2;
+    .content-#{$jihyun}{
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    
+}

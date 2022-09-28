@@ -1,0 +1,8 @@
+// #{$변수명}
+
+@for $jihyun from 1 through 12 {
+    .profile-#{$jihyun}{
+        background-color: red;
+        font-size: #{$jihyun * 10}px;
+    }
+}

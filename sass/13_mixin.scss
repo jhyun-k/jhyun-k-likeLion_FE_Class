@@ -1,0 +1,15 @@
+@mixin center-xy{
+	display: flex;
+	justify-content : center;
+	align-items : center;
+}
+
+//파선아실 
+
+.card{
+	@include center-xy; // 정의한 center-xy mixin을 사용하여 코드 한줄이면 끝!
+}
+
+.aside{
+	@include center-xy; 
+}

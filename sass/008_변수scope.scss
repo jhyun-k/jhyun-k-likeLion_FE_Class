@@ -1,0 +1,42 @@
+.info{
+	$line-normal : 1.34; // 지역변수
+	font-size : 15px;
+	line-height : $line-normal;
+	text-align : right;
+  span{
+		line-height : $line-normal;
+	}
+}
+
+//Scss
+$font-p : 15px; // 전역변수
+
+.main-box{
+	p {
+		font-size : $font-p;
+	}
+	a {
+		font-size : $font-p;
+	  color : blue;
+		text-decoration : none;
+	}
+}
+
+// .one {
+//     $size : 12px;
+//     font-size : $size; // 12px
+// }
+
+// .two { 
+//     $size : 14px;
+//     font-size : $size // 14px
+// }
+
+.one { 
+    $size : 12px !global; // 권하지 않아요
+    font-size : $size;
+}
+
+.two {
+    font-size: $size;
+}
