@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+<script>
+    // const (참조 변경 불가) let(참조 변경 가능) var(x)
+    let one = true; // 다른 언어는 True인 경우도 있다
+    let two = false;
+    let three;
+    let four = null;
+    let five = Infinity
+
+    console.log(Boolean("")); //false
+    console.log(Boolean(" ")); //true 스페이스바도 문자열로 인식해서 일단 문자열이 있으면 true
+    console.log(Boolean('abc')); //true
+    console.log(Boolean(0)); //false
+    console.log(Boolean(100)); //true  0 이외 다른 숫자들은 true
+    console.log(Boolean(-100)); //true  0 이외 다른 숫자들은 true
+    console.log(Boolean(three)); //false
+    console.log(Boolean(four)); //false
+    console.log(Boolean(five));//true
+    one = 0;
+
+            // 우리를 힘들게 하는 JS
+            console.log(Boolean([]));
+            console.log(Boolean({}));
+
+    if (one) {
+        console.log('hello');
+    } else {
+        console.log('world');
+    }
+</script>
+</body>
+</html>
