@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+<script>
+         // let myObj = {
+        //     val1: 10,
+        //     val2: 30
+        // }
+
+        // let fruit = (["메론", "수박"], ["포도", "체리"]);
+
+        // // 배열안 배열일때 ([].[])
+        // let fish = ["정어리", "고등어", "참치"]
+        // //일반적 배열 방법 []
+        // let myobj = { val1: 10, val2: 30 }
+        // //키와 value가 있을때 {}
+
+        let myarry = [];
+
+        let myArray = new Array(5);
+
+        console.log(myArray); // 비어있음 x 5 (length가 5)
+
+        let myArray2 = new Array(5, 3, 2);
+        console.log(myArray2); //[5,3,2]
+
+        myArray2[0] = 100;
+        "hello"[2];
+
+        console.log([1, 2, 3, 4][2]);
+        console.log(myArray2); // [100,3,2]
+
+        // 맨 뒤에있는 요소를 지우는 unshift()
+        const cafe = ['coffee', 'cake', 'tea', 'cookie']
+        const count = cafe.unshift('bread');
+
+        count
+        // expected output: 5
+        cafe
+        // expected output: ['bread', 'coffee', 'cake', 'tea', 'cookie']
+
+        // 맨 앞에 있는 요소를 지우는 shift()
+        const cafe2 = ['coffee', 'cake', 'tea', 'cookie']
+        const firstElement = cafe.shift();
+
+        firstElement
+        // expected output: 'coffee'
+        cafe2
+        // expected output: ['cake', 'tea', 'cookie']
+
+        //특정한 인덱스에 요소를 위치시킬 때에는 splice()
+        // 배열.splice(요소를 위치시키고자 하는 인덱스, 제거할 요소의 개수, 배열에 추가할 요소)
+
+
+        //## 배열 일부분을 잘라내서 새로운 배열로 반환할 때에는 slice(시작인덱스, 끝+1 인덱스)
+        let fish = ['정어리', '고등어','돌고래','참치','고래상어','코끼리']
+        fish.slice(2,3);
+        console.log(fish);//코끼리
+
+        //순서를 거꾸로 뒤집고 싶다면 reverse()
+        const cafe3 = ['coffee', 'cake', 'tea', 'cookie']
+        cafe3.reverse()
+        //expected output: ['cookie', 'tea', 'cake', 'coffee']
+
+        //요소의 인덱스를 찾고 싶을 때에는 indexOf() 찾는값 존재하지 않으면 -1 반환
+        const cafe4 = ['coffee', 'cake', 'tea', 'cookie']
+
+        cafe4.indexOf('tea')
+        //expected output: 2
+
+        cafe4.indexOf('coffe', 1)
+        //expected output: -1
+
+        cafe4.indexOf('bread')
+        //expected output: -1
+
+    // 요소들을 연결해 하나의 값으로 만들 때에는 join()  join으로 만든 값의 자료형은 string이다
+    const cafe5 = ['coffee', 'cake', 'tea', 'cookie']
+    cafe5.join('/')
+    //expected output: 'coffee/cake/tea/cookie'
+    cafe5.join('')
+    //expected output: 'coffeecaketeacookie'
+            
+    const example = ['coffee', null, undefined, 'cake']
+    example.join('')
+    //expected output: 'coffeecake'
+
+
+    //특정 요소가 포함되었는지 확인할 때에는 includes()
+    const cafe6 = ['coffee', 'cake', 'tea', 'cookie']
+
+    cafe6.includes('bread');
+    //expected output: false
+
+    cafe6.includes('cake');
+    //expected output: true
+
+    cafe6.includes('cake', -3);
+    //expected output: true
+
+    // 하나의 요소라도 조건을 만족하는지 확인할 때에는 find()
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    arr.find(i => i > 5);
+    //expected output: 6
+
+
+    //모든 요소가 조건을 만족하는지 확인할 때에는 filter()
+    const arr2 = [{
+    'name' : 'title1',
+    'contents' : 'contents1',
+    'dataNum' : 1
+}, {
+    'name' : 'title2',
+    'contents' : 'contents2',
+    'dataNum' : 2
+}, {
+    'name' : 'title3',
+    'contents' : 'contents3',
+    'dataNum' : 3
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5
+}];
+
+const newArr = arr2.filter(i => i.dataNum > 3);
+//expected output:
+	[{
+	    'name' : 'title4',
+	    'contents' : 'contents4',
+	    'dataNum' : 4
+	}, {
+	    'name' : 'title5',
+	    'contents' : 'contents5',
+	    'dataNum' : 5
+	}]
+
+
+    //모두 똑같은 요소로 채우고 싶다면 fill()
+    const cafe7 = ['coffee', 'cake', 'tea', 'cookie']
+
+    cafe7.fill('bread')
+    //expected output: ['bread', 'bread', 'bread', 'bread']
+
+
+
+    let studentList = [
+            {
+                id: 1, name: '원범', score: 'great'
+            },
+            {
+                id: 2, name: '김진', score: 'nice'
+            },
+            {
+                id: 3, name: '혜원', score: 'good'
+            },
+            {
+                id: 4, name: '재현', score: 'too cool for school'
+            }
+        ]
+
+
+    let studentName = studentList.map((i)=> i.name);
+    console.log(studentName);
+
+    // 각각의 요소를 실행하고 싶을때는 forEach()
+    const foreach = [1,2,3,4,5,6,7,8,9,10]
+    foreach.forEach(function (i){
+        return console.log(i);
+    })
+
+    //배열을 합치거나 새로운 요소를 추가할 때에는 concat()
+    const cafe8 = ['coffee'];
+
+    cafe8.concat(['cake']);
+    //expected output: ['coffee', 'cake']
+
+    cafe8.concat(['tea'], 'cookie');
+    //expected output: ['coffee', 'tea', 'cookie']
+    
+    
+</script>
+</body>
+</html>
