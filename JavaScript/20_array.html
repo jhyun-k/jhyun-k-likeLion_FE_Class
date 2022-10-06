@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+<script>
+    Array(100).fill(0).map((_, index)=>index+1).filter(i => i % 3 === 0 || i % 5 === 0).reduce((누적값, 현재값, 인덱스) => {
+                return 누적값 + 현재값
+            }, 0);
+            
+         cafe = ['coffee', 'cake', 'tea', 'cookie']
+         cafe = [{
+             'item' : 'coffee',
+             'amount' : 5
+         },{
+             'item' : 'cake',
+             'amount' : 4
+         },{
+             'item' : 'tea',
+             'amount' : 7
+         },{
+             'item' : 'cookie',
+             'amount' : 3
+         }]
+
+         index = cafe.findIndex(obj => obj.item.length <= 3)
+</script>
+</body>
+</html>
