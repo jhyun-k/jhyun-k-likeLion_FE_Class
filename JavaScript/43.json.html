@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        table, thead, tbody,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <button onclick='renderTable(userData)'>회원정보 로딩</button>
+    <table style='width:100%'  id="infoTable">
+        <thead>
+            <th onclick="sort('_id')" style='width:15%'>id</th>
+            <th onclick="sort('index')" style='width:15%'>index</th>
+            <th onclick="sort('guid')" style='width:15%'>guid</th>
+            <th onclick="sort('age')" style='width:15%'>age</th>
+            <th onclick="sort('name')" style='width:15%'>name</th>
+            <th onclick="sort('gender')" style='width:15%'>gender</th>
+        </thead>
+        <tbody id='tableBody'>
+            
+        </tbody>
+    </table>
+<script>
+    let userData = [
+  {
+    "_id": "634655f4e1f56a085ea294a6",
+    "index": 0,
+    "guid": "145fa5bb-8ca5-4508-b1b5-357fa2185675",
+    "age": 35,
+    "name": "Vasquez Mcclure",
+    "gender": "male"
+  },
+  {
+    "_id": "634655f44a08158d7dea378f",
+    "index": 1,
+    "guid": "b08d36c5-54c0-4b4c-adee-bc12541733d4",
+    "age": 23,
+    "name": "Albert Maynard",
+    "gender": "male"
+  },
+  {
+    "_id": "634655f42c79ad126fcabf59",
+    "index": 2,
+    "guid": "bf1bcef8-3046-4cf8-b154-ae6575b0ec80",
+    "age": 20,
+    "name": "Celia Lane",
+    "gender": "female"
+  },
+  {
+    "_id": "634655f4bbf929118c7970a4",
+    "index": 3,
+    "guid": "55fa3f51-9318-4dfe-9c78-f2ee1d351fa3",
+    "age": 31,
+    "name": "Russell Simpson",
+    "gender": "male"
+  },
+  {
+    "_id": "634655f446a7fd4912cd3f4d",
+    "index": 4,
+    "guid": "7e610b14-8ad2-4f80-89af-ad563e123b71",
+    "age": 24,
+    "name": "Wade Horne",
+    "gender": "male"
+  }
+]
+
+
+var click = true;
+
+function sort(key) {
+    if (click) {
+        click = false;
+        let sortedData = userData.sort((a, b) =>
+            a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+        );
+        renderTable(sortedData);
+    } else {
+        click = true;
+        let sortedData = userData.sort((a, b) =>
+            a[key] > b[key] ? -1 : a[key] < b[key] ? 1 : 0
+        );
+        renderTable(sortedData);
+    }
+}
+
+
+function renderTable(userData){
+    // console.log(userData[0])
+    let tableBodyData = []
+
+    for(const user of userData) {
+        tableBodyData.push(`
+        <tr>
+                <td>${user._id}</td>
+                <td>${user.index}</td>
+                <td>${user.guid}</td>
+                <td>${user.age}</td>
+                <td>${user.name}</td>
+                <td>${user.gender}</td>
+            </tr>
+            `)
+    }
+    console.log(tableBodyData.join(""));
+    document.querySelector('#infoTable > tbody').innerHTML = tableBodyData.join("")
+}
+</script>
+</body>
+</html>
+
