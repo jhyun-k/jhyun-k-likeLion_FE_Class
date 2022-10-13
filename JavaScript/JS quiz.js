@@ -23,18 +23,32 @@ let arr = [11, 22, 33, 111, 2]
 // 2, 4, 6, 3, 2
 // 정답 : 17
 
-let input = arr
-let output = 0
-// for(let i = 0;i<input.length;i++){
-//     for(let j=0;j<i.length;j++){
-//         console.log(i)
-//     output = output + i[j]
-//     }
-// }
-for(let i=0;i<input.length;i++){
-    for(let j=1;j<i.length;j++){
-        console.log(j)
+let str = arr.join('')
+let sum = 0;
+
+for (let i in str) {
+    sum += parseInt(str[i], 10);
+  }
+
+  console.log(sum);
+
+// 문제4
+// - 반복문만 사용하여 숫자단위 콤마 찍기(예 - 1,000,000)
+// - 반복문만 사용하여 숫자단위 콤마 없애기(예 - 1,000,000 → 1000000)
+// - 문자열 뒤집기
+/* let  = 10000
+
+for (let i = array.length-1; i >=0; i--) {
+	console.log(i);
+}
+ */
+function addComma(num){
+    if(num.length<=3){
+        return num
     }
+
+    let count = Math.floor((num.length-1)/3);
+    let result = "";
+    
 }
 
-console.log(output);
