@@ -18,23 +18,49 @@
     height: 100vh;
     perspective: 1600px;
 }
-
+@keyframes slide {
+    from {
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(720deg);
+    }
+}
 .list-item {
     position: fixed;
     width: 340px;
-    height: 300px;
+    height: 200px;
     top: 50%;
     left: 50%;
     /* margin: -200px 0 0 -170px; */
-    transform: translate(-50%, -50%) rotateY(180deg);
+    transform: translate(-50%, -50%) rotateY(0deg);
     transform-style: preserve-3d;
-    transition: .3s;
+    transition: 1s;
 }
+
 .list-item.kc{
     transform: translate(-50%, -50%) rotateY(0deg);
 }
 .list-item.kw{
     transform: translate(-50%, -50%) rotateY(45deg);
+}
+.list-item.wc{
+    transform: translate(-50%, -50%) rotateY(90deg);
+}
+.list-item.ww{
+    transform: translate(-50%, -50%) rotateY(135deg);
+}
+.list-item.cc{
+    transform: translate(-50%, -50%) rotateY(180deg);
+}
+.list-item.cw{
+    transform: translate(-50%, -50%) rotateY(225deg);
+}
+.list-item.jc{
+    transform: translate(-50%, -50%) rotateY(270deg);
+}
+.list-item.jw{
+    transform: translate(-50%, -50%) rotateY(315deg);
 }
 
 .list-item li {
@@ -88,7 +114,7 @@
 </head>
 <body>
     <div class='wrapper'>
-        <h2>오늘 뭐먹지?</h2>
+        <h2 style='font-size:30px'>오늘 뭐먹지?</h2>
             <form>
                 <div>
                     <input type="radio" name='first' id='korea'><label for='korea'>한식</label>
@@ -136,8 +162,10 @@
     let currAngle = 0;
 
     let score = 0;
-
+    
     btn.addEventListener('click',()=>{
+        center.classList="list-item"
+        score = 0
         if(korea.checked==true){
             score += 1;
         }else if(west.checked == true){
@@ -154,49 +182,47 @@
         }
         if(score == 6){
             menu.innerText='냉면'
-            center.style.transform = `translate(-50%, -50%) rotateY(0deg)`;
+            center.classList.add('kc')
         }else if(score == 11){
             menu.innerText='김치찌개'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6)`;
-
+            center.classList.add('kw')
         }
         else if(score == 7){
             menu.innerText='샐러드'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*2)`;
+            center.classList.add('wc')
 
         }
         else if(score == 12){
             menu.innerText='피자'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*3)`;
+            center.classList.add('ww')
 
         }
         else if(score == 8){
             menu.innerText='짬뽕'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*4)`;
+            center.classList.add('cc')
 
         }
         else if(score == 13){
             menu.innerText='짜장'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*5)`;
+            center.classList.add('cw')
 
         }
         else if(score == 9){
             menu.innerText='초밥'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*6)`;
+            center.classList.add('jc')
 
         }
         else if(score == 14){
             menu.innerText='가츠동'
-            center.style.transform = `translate(-50%, -50%) rotateY(calc(360deg/6*7)`;
+            center.classList.add('jw')
 
         }
         console.log(score)
-        score = 0
         console.log(score);
     })
 
     
-      document.addEventListener('click', function (event) {
+      /* document.addEventListener('click', function (event) {
         if (window.innerWidth / 2 < event.clientX) {
             currAngle -= angle;
         } else {
@@ -204,7 +230,7 @@
         }
         center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
         console.log(currAngle)
-    })  
+    })   */
 </script>
 </body>
 </html>
