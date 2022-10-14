@@ -42,13 +42,26 @@ for (let i = array.length-1; i >=0; i--) {
 	console.log(i);
 }
  */
-function addComma(num){
-    if(num.length<=3){
-        return num
+
+let input = '100000000'
+let output = ''
+for(let i = input.length;i>=0;i--){
+    if((input.length-i)%3==1 && output.length!=0 && input.charAt(i) != "-"){
+        output = "," + output;
+     }
+     output = input.charAt(i) + output;
+     
+  }
+
+console.log(output);
+
+//문제 5 로또번호 추첨기
+
+let lotto = []
+while(lotto.length<6){
+    let num= parseInt(Math.random()*45+1)
+    if(lotto.indexOf(num) == -1){
+        lotto.push(num)
     }
-
-    let count = Math.floor((num.length-1)/3);
-    let result = "";
-    
 }
-
+console.log(lotto);

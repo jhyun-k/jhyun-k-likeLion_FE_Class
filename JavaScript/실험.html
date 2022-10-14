@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실험</title>
+    <style>
+        .black{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class='black'></div>
+    <button class='red-btn'>빨강</button>
+    <button class='yellow-btn'>노랑</button>
+    <button class='green-btn'>초록</button>
+<script>
+const box = document.querySelector('.black');
+const red = document.querySelector('.red-btn');
+const yellow = document.querySelector('.yellow-btn');
+const green = document.querySelector('.green-btn');
+
+red.addEventListener('click', function(){
+    box.classList.add('red')
+    box.classList.remove('yellow')
+    box.classList.remove('green')
+})
+yellow.addEventListener('click', function(){
+    box.classList.add('yellow')
+    box.classList.remove('red')
+    box.classList.remove('green')
+})
+green.addEventListener('click', function(){
+    box.classList.add('green')
+    box.classList.remove('red')
+    box.classList.remove('yellow')
+})
+</script>
+</body>
+</html>

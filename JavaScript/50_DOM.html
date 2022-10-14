@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .blue{background-color: blue;
+        color: white;}
+        .black{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id='myDiv'>div입니다</div>
+    <div id='myDiv'>div입니다</div>
+    <div class='myDiv'>div입니다</div>
+    <div class='myDiv'>div입니다</div>
+    <div class='myDiv'>div입니다</div>
+
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+    <button>fake</button>
+    <button class=''>MakeMeBlue</button>
+    <div class='black'></div>
+    <button class='btn'>빨강</button>
+    <button class='btn'>노랑</button>
+    <button class='btn'>초록</button>
+<script>
+    // id로 접근하는 방법
+    // console.log(document.getElementById('myDiv'));
+    // 찾아서 저장하고 사용한다!
+    // const myDiv = document.getElementById('myDiv');
+    // 태그로 가져오기
+    // console.log(document.getElementsByTagName('div'))
+    // class name으로 가져오기
+    // console.log(document.getElementsByClassName('myDiv'))
+
+    const container = document.getElementById('container')
+    console.log(container.getElementsByClassName('item-second')[0])
+    console.log(document.getElementsByTagName('li')[0])
+
+    console.log(document.querySelectorAll('li')[3]);
+
+    // 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+// listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+/* 
+const myBtn = document.querySelector("button");
+
+myBtn.addEventListener('click', function(){
+	console.log("hello world");
+})
+const myBtn2 = document.querySelector(".btn");
+
+myBtn2.addEventListener('click', function(){
+
+// blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+	// myBtn2.classList.add("blue");
+
+	// myBtn.classList.remove(“blue”);     클래스를 제거합니다.
+	myBtn2.classList.toggle("blue");     /* 클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다. */
+	// myBtn.classList.contains(“blue”);   해당하는 클래스가 있는지 확인합니다.}) */
+
+const box = document.querySelector('.black');
+const red = document.querySelector('.btn')
+const yellow = document.getElementsByClassName('btn')[1]
+const green = document.getElementsByClassName('btn')[2]
+
+red.addEventListener('click', function(){
+    box.classList.add('red')
+    box.classList.remove('yellow')
+    box.classList.remove('green')
+})
+yellow.addEventListener('click', function(){
+    box.classList.add('yellow')
+    box.classList.remove('red')
+    box.classList.remove('green')
+
+})
+green.addEventListener('click', function(){
+    box.classList.add('green')
+    box.classList.remove('red')
+    box.classList.remove('yellow')
+
+})
+
+</script>
+</body>
+</html>
