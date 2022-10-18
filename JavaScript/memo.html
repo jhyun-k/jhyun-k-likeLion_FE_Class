@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>메모장</h1>
+        <input style="display: block" type="text" id='title' value=''>
+        <textarea name="" id="content" cols="30" rows="10"></textarea>
+        <button>저장</button>
+        <p class='memo'></p>
+<script>
+    const title = document.getElementById('title');
+    const content = document.getElementById('content')
+    const memo = document.getElementsByName('memo')
+
+    console.log(title.value)
+</script>
+</body>
+</html>
