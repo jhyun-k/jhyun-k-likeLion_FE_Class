@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,217 +8,300 @@
     <title>오늘뭐먹지?</title>
     <link rel="stylesheet" href="/CSS/reset.css">
     <style>
-    @charset 'utf-8';
+        @charset 'utf-8';
 
-    .wrapper{
-        width: 600px;
-        margin: 100px auto;
-    }
-#app {
-    width: 100vw;
-    height: 100vh;
-    perspective: 1600px;
-}
-@keyframes slide {
-    from {
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateY(720deg);
-    }
-}
-.list-item {
-    position: fixed;
-    width: 340px;
-    height: 200px;
-    top: 50%;
-    left: 50%;
-    /* margin: -200px 0 0 -170px; */
-    transform: translate(-50%, -50%) rotateY(0deg);
-    transform-style: preserve-3d;
-    transition: 1s;
-}
+        body {
+            background-color: pink;
+        }
 
-.list-item.kc{
-    transform: translate(-50%, -50%) rotateY(0deg);
-}
-.list-item.kw{
-    transform: translate(-50%, -50%) rotateY(45deg);
-}
-.list-item.wc{
-    transform: translate(-50%, -50%) rotateY(90deg);
-}
-.list-item.ww{
-    transform: translate(-50%, -50%) rotateY(135deg);
-}
-.list-item.cc{
-    transform: translate(-50%, -50%) rotateY(180deg);
-}
-.list-item.cw{
-    transform: translate(-50%, -50%) rotateY(225deg);
-}
-.list-item.jc{
-    transform: translate(-50%, -50%) rotateY(270deg);
-}
-.list-item.jw{
-    transform: translate(-50%, -50%) rotateY(315deg);
-}
+        .wrapper {
+            width: 100%;
+            margin: 100px auto;
+        }
 
-.list-item li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
+        #app {
+            width: 100vw;
+            height: 100vh;
+            perspective: 1600px;
+        }
 
-.list-item li img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
+        @keyframes slide {
+            from {
+                transform: rotateY(0deg);
+            }
 
-.list-item li:nth-child(1) {
-    transform: rotateY(0) translateZ(calc(340px*8/3.14/2));
-}
+            to {
+                transform: rotateY(720deg);
+            }
+        }
 
-.list-item li:nth-child(2) {
-    transform: rotateY(315deg) translateZ(calc(340px*8/3.14/2));
-}
-
-.list-item li:nth-child(3) {
-    transform: rotateY(270deg) translateZ(calc(340px*8/3.14/2));
-}
-
-.list-item li:nth-child(4) {
-    transform: rotateY(225deg) translateZ(calc(340px*8/3.14/2));
-}
-
-.list-item li:nth-child(5) {
-    transform: rotateY(180deg) translateZ(calc(340px*8/3.14/2));
-}
-
-.list-item li:nth-child(6) {
-    transform: rotateY(135deg) translateZ(calc(340px*8/3.14/2));
-}
-
-.list-item li:nth-child(7) {
-    transform: rotateY(90deg) translateZ(calc(340px*8/3.14/2));
-}
-.list-item li:nth-child(8) {
-    transform: rotateY(45deg) translateZ(calc(340px*8/3.14/2));
-}
+        .title{
+            font-size: 40px;
+            font-weight: bold;
+            color:hotpink;
+            margin-bottom: 25px;
+            text-align: center;
+        }
 
 
+        .list-item {
+            position: fixed;
+            width: 340px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            /* margin: -200px 0 0 -170px; */
+            transform: translate(-50%, -50%) rotateY(0deg);
+            transform-style: preserve-3d;
+            transition: 1s;
+            margin-top: 120px ;
+        }
+
+        .list-item.kc {
+            transform: translate(-50%, -50%) rotateY(0deg);
+        }
+
+        .list-item.kw {
+            transform: translate(-50%, -50%) rotateY(45deg);
+        }
+
+        .list-item.wc {
+            transform: translate(-50%, -50%) rotateY(90deg);
+        }
+
+        .list-item.ww {
+            transform: translate(-50%, -50%) rotateY(135deg);
+        }
+
+        .list-item.cc {
+            transform: translate(-50%, -50%) rotateY(180deg);
+        }
+
+        .list-item.cw {
+            transform: translate(-50%, -50%) rotateY(225deg);
+        }
+
+        .list-item.jc {
+            transform: translate(-50%, -50%) rotateY(270deg);
+        }
+
+        .list-item.jw {
+            transform: translate(-50%, -50%) rotateY(315deg);
+        }
+
+        .list-item li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .list-item li img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .list-item li:nth-child(1) {
+            transform: rotateY(0) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(2) {
+            transform: rotateY(315deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(3) {
+            transform: rotateY(270deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(4) {
+            transform: rotateY(225deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(5) {
+            transform: rotateY(180deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(6) {
+            transform: rotateY(135deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(7) {
+            transform: rotateY(90deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .list-item li:nth-child(8) {
+            transform: rotateY(45deg) translateZ(calc(340px*8/3.14/2));
+        }
+
+        .btn {
+            display: block;
+            width: 160px;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            background-color: rgb(255, 160, 176);
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            border-bottom: solid 6px rgb(77, 55, 58);
+            cursor: pointer;
+            margin: 20px auto;
+        }
+
+        .btn:active {
+            border-bottom: none;
+        }
+        .first{
+            text-align: center;
+        }
+        .second{
+            text-align: center;
+            
+        }
+
+        input{
+            visibility: hidden;
+            margin: 20px 15px;
+            
+        }
+        .radio{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-top: 30px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        label{
+            background-color: orange;
+        }
+        input:checked + label{
+            background-color: rgb(174, 109, 30);
+        }
+        h3{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            position: fixed;
+            bottom: 50px;
+            left: 45%;
+            color: hotpink;
+        }
     </style>
 </head>
+
 <body>
     <div class='wrapper'>
-        <h2 style='font-size:30px'>오늘 뭐먹지?</h2>
-            <form>
-                <div>
-                    <input type="radio" name='first' id='korea'><label for='korea'>한식</label>
-                    <input type="radio" name='first' id='west'><label for='west'>양식</label>
-                    <input type="radio" name='first' id='china'><label for='china'>중식</label>
-                    <input type="radio" name='first' id='japan'><label for='japan'>일식</label>
-                </div>
-            </form>
-            <form>
-                <div>
-                    <input type="radio" name='second' id='cool'><label for='cool'>차가운거</label>
-                    <input type="radio" name='second' id='warm'><label for='warm'>뜨거운거</label>
-                </div>
-            </form>
-            <button type='submit'>오늘 뭐먹지?</button>
-            <h3></h3>
+        <h2 class='title'>오늘 뭐 먹지?</h2>
+        <form>
+            <div class='first'>
+                <input type="radio" name='first' id='korea'><label for='korea' class='radio korea'>한식</label>
+                <input type="radio" name='first' id='west'><label for='west' class='radio west'>양식</label>
+                <input type="radio" name='first' id='china'><label for='china' class='radio china'>중식</label>
+                <input type="radio" name='first' id='japan'><label for='japan' class='radio japan'>일식</label>
+            </div>
+        </form>
+        <form>
+            <div class='second'>
+                <input type="radio" name='second' id='warm'><label for='warm' class='radio warm'>뜨거운거</label>
+                <input type="radio" name='second' id='cool'><label for='cool' class='radio cool'>차가운거</label>
+            </div>
+        </form>
+        <button type='submit' class='btn'>오늘 뭐 먹지?</button>
     </div>
-        <article>
-            <ul class='list-item'>
-                <li><img src="https://img.hankyung.com/photo/202106/01.26649267.1.jpg" alt=""></li>
-                <li><img src="https://honeytip.gigigi.kr/wp-content/uploads/2022/07/%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0-%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C.png" alt=""></li>
-                <li><img src="https://static.wtable.co.kr/image-resize/production/service/recipe/144/4x3/215327b9-760d-4284-935a-b90a3d901870.jpg" alt=""></li>
-                <li><img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/04/01/f8b3042c80a214dd7cc60fa2027cdc9d1.jpg" alt=""></li>
-                <li><img src="https://img-cf.kurly.com/shop/data/goodsview/20220711/gv00000336080_1.jpg" alt=""></li>
-                <li><img src="https://img-cf.kurly.com/shop/data/goodsview/20201012/gv10000126356_1.jpg" alt=""></li>
-                <li><img src="https://ldb-phinf.pstatic.net/20220318_25/1647571522964j6xd3_JPEG/%C6%AF%BB%F3%B9%AB%C3%CA%B9%E4%BC%BC%C6%AE.jpg?type=f804_408_60_sharpen" alt=""></li>
-                <li><img src="https://mp-seoul-image-production-s3.mangoplate.com/keyword_search/meta/pictures/mjaouphyh3mt8xoz.png" alt=""></li>
-            </ul>
-        </article>
-<script>
-    const korea = document.getElementById('korea')
-    const west = document.getElementById('west')
-    const china = document.getElementById('china')
-    const japan = document.getElementById('japan')
+    <article>
+        <ul class='list-item'>
+            <li><img src="https://img.hankyung.com/photo/202106/01.26649267.1.jpg" alt=""></li>
+            <li><img src="https://honeytip.gigigi.kr/wp-content/uploads/2022/07/%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0-%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C.png"
+                    alt=""></li>
+            <li><img src="https://static.wtable.co.kr/image-resize/production/service/recipe/144/4x3/215327b9-760d-4284-935a-b90a3d901870.jpg"
+                    alt=""></li>
+            <li><img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/04/01/f8b3042c80a214dd7cc60fa2027cdc9d1.jpg"
+                    alt=""></li>
+            <li><img src="https://img-cf.kurly.com/shop/data/goodsview/20220711/gv00000336080_1.jpg" alt=""></li>
+            <li><img src="https://img-cf.kurly.com/shop/data/goodsview/20201012/gv10000126356_1.jpg" alt=""></li>
+            <li><img src="https://ldb-phinf.pstatic.net/20220318_25/1647571522964j6xd3_JPEG/%C6%AF%BB%F3%B9%AB%C3%CA%B9%E4%BC%BC%C6%AE.jpg?type=f804_408_60_sharpen"
+                    alt=""></li>
+            <li><img src="https://mp-seoul-image-production-s3.mangoplate.com/keyword_search/meta/pictures/mjaouphyh3mt8xoz.png"
+                    alt=""></li>
+        </ul>
+    </article>
+    <h3></h3>
+    <script>
+        const korea = document.getElementById('korea')
+        const west = document.getElementById('west')
+        const china = document.getElementById('china')
+        const japan = document.getElementById('japan')
 
-    const cool = document.getElementById('cool')
-    const warm = document.getElementById('warm')
-    
-    const btn = document.querySelector('button')
-    const menu = document.querySelector('h3')
+        const cool = document.getElementById('cool')
+        const warm = document.getElementById('warm')
 
-    const center = document.querySelector('.list-item');
-    const items = document.querySelectorAll('.list-item li');
-    const angle = 360 / items.length;
-    let currAngle = 0;
+        const btn = document.querySelector('button')
+        const menu = document.querySelector('h3')
 
-    let score = 0;
-    
-    btn.addEventListener('click',()=>{
-        center.classList="list-item"
-        score = 0
-        if(korea.checked==true){
-            score += 1;
-        }else if(west.checked == true){
-            score += 2;
-        }else if(china.checked == true){
-            score += 3;
-        }else if(japan.checked == true){
-            score += 4;
-        }
-        if(cool.checked == true){
-            score += 5
-        }else if(warm.checked==true){
-            score += 10;
-        }
-        if(score == 6){
-            menu.innerText='냉면'
-            center.classList.add('kc')
-        }else if(score == 11){
-            menu.innerText='김치찌개'
-            center.classList.add('kw')
-        }
-        else if(score == 7){
-            menu.innerText='샐러드'
-            center.classList.add('wc')
+        const center = document.querySelector('.list-item');
+        const items = document.querySelectorAll('.list-item li');
+        const angle = 360 / items.length;
+        let currAngle = 0;
 
-        }
-        else if(score == 12){
-            menu.innerText='피자'
-            center.classList.add('ww')
+        let score = 0;
 
-        }
-        else if(score == 8){
-            menu.innerText='짬뽕'
-            center.classList.add('cc')
-        }
-        else if(score == 13){
-            menu.innerText='짜장'
-            center.classList.add('cw')
-        }
-        else if(score == 9){
-            menu.innerText='초밥'
-            center.classList.add('jc')
-        }
-        else if(score == 14){
-            menu.innerText='가츠동'
-            center.classList.add('jw')
-        }
-        console.log(score)
-    })
+        btn.addEventListener('click', () => {
+            center.classList = "list-item"
+            score = 0
+            if (korea.checked == true) {
+                score += 1;
+            } else if (west.checked == true) {
+                score += 2;
+            } else if (china.checked == true) {
+                score += 3;
+            } else if (japan.checked == true) {
+                score += 4;
+            }
+            if (cool.checked == true) {
+                score += 5
+            } else if (warm.checked == true) {
+                score += 10;
+            }
+            if (score == 6) {
+                center.classList.add('kc')
+                menu.innerHTML = '냉면'
+            } else if (score == 11) {
+                center.classList.add('kw')
+                menu.innerHTML = '김치찌개'
 
-    
-      /* document.addEventListener('click', function (event) {
+            } else if (score == 7) {
+                center.classList.add('wc')
+                menu.innerHTML = '샐러드'
+            } else if (score == 12) {
+                menu.innerHTML = '파스타'
+                center.classList.add('ww')
+            } else if (score == 8) {
+                menu.innerHTML = '짜장'
+                center.classList.add('cc')
+            } else if (score == 13) {
+                menu.innerHTML = '중국냉면'
+                center.classList.add('cw')
+            } else if (score == 9) {
+                menu.innerHTML = '초밥'
+                center.classList.add('jc')
+            } else if (score == 14) {
+                menu.innerHTML = '덮밥'
+                center.classList.add('jw')
+            }
+            console.log(score)
+        })
+
+
+        /* document.addEventListener('click', function (event) {
         if (window.innerWidth / 2 < event.clientX) {
             currAngle -= angle;
         } else {
@@ -226,6 +310,7 @@
         center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
         console.log(currAngle)
     })   */
-</script>
+    </script>
 </body>
+
 </html>
