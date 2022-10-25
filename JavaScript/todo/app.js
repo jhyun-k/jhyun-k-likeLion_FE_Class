@@ -7,7 +7,7 @@ addBtn.addEventListener('click',createListItem);
 
 const message = document.createElement('strong');
 message.style.display = 'none';
-message.classList.add('txt_invalid');
+message.classList('txt_invalid');
 main.appendChild(message)
 
 //투두를 저장할 배열
