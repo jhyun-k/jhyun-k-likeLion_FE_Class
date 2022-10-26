@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc</title>
+</head>
+<body>
+    
+<script>
+    function person(){
+        let ate = 30; //비공개프로퍼티로
+
+        function innerPerson(){
+            return age
+        }
+        innerPerson.prototype.getAge = function(){}
+    }
+    const personFunc = Person();
+    const person = personFunc()
+    // (function(){
+    //     console.log('IIFE')
+    // })()
+
+        const NewPerson = (
+            function (){
+                let age = 30;
+                function innerPerson(){}
+                innerPerson.prototype.getAge = function () {
+                    return age
+                }
+                return innerPerson
+            }
+        )
+
+
+</script>
+</body>
+</html>
