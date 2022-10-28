@@ -79,14 +79,14 @@ async function post() {
 post();
 
 // delete - 삭제
-async function delete() {
+async function del() {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/3',
     { method: "DELETE"}
     );
     const data = await response.json();
     console.log(data);
 }
-delete();
+del();
 
 
 // put - 수정
