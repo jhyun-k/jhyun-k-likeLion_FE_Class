@@ -5,10 +5,7 @@ const listTodo = main.querySelector('.list_todo');
 
 addBtn.addEventListener('click',createListItem);
 
-const message = document.createElement('strong');
-message.style.display = 'none';
-message.classList('txt_invalid');
-main.appendChild(message)
+
 
 //투두를 저장할 배열
 const tasks = JSON.parse(localStorage.getItem('tasklist'))||[] 
@@ -103,12 +100,29 @@ function buildTask(){
     saveTasks()
 }
 
+
+
+
+//경고 메시지 함수
+
+const message = document.createElement('strong');
+message.style.display = 'none';
+message.classList.add('txt_invalid');
+main.appendChild(message)
+
+function errorMsg(msg){
+    message.style.display='block';
+    message.textContent= msg;
+    userTask.focus()
+}
+
+
 // 다운로드 버튼 생성
 const downloadBtn = document.createElement('button');
 downloadBtn.classList.add('btn');
 downloadBtn.textContent = '리스트 다운로드';
 main.appendChild(downloadBtn);
-// downloadBtn.addEventListener('click', downloadFile);
+downloadBtn.addEventListener('click', downloadFile);
 
 
 // 다운로드 버튼의 노출을 판단하는 함수
@@ -121,17 +135,6 @@ function showDownload() {
         downloadBtn.style.display = 'none';
     }
 }
-
-
-//경고 메시지 함수
-function errorMsg(msg){
-    message.style.display='block';
-    message.textContent= msg;
-    userTask.focus()
-}
-
-
-
 
 function downloadFile() {
     let temp = '<나의 할일 목록>\n\n';
