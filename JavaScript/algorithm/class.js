@@ -40,3 +40,10 @@ l.append(3)
 l.append(10)
 l.append(20)
 l.append(30)
+
+
+fullData()
+    return JSON.parse(this.toString())
+
+
+return '[' + 출력데이터.slice(0, -2) + ']'
