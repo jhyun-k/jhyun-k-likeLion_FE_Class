@@ -2,6 +2,7 @@
 
 // a()
 
-import {a,b,c} from './015.js'
+import d, {a,b,c} from './015.js'
 
 a()
+d() 
