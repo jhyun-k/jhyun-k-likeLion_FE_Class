@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>회원가입</legend>
+            <label for="email">이메일을 입력해주서ㅔ요</label>
+            <input type="email" id='email' pattern='[a-zA-Z0-9]+[@][a-zA-Z0-9]*\.[a-zA-Z]*' required>
+
+            <label for="password">비밀번호를 입력해주세요</label>
+            <input type="password" id='password'
+                pattern="(?=.*[!@#$%^&*()_+=-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}" required>
+
+            <label for="passwordOk">비밀번호를 확인해주세요</label>
+            <input type="password" id='passwordOk'
+                pattern="(?=.*[!@#$%^&*()_+=-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}" required>
+
+            <button>제출</button>
+        </fieldset>
+    </form>
+    <script>
+        /**
+         * 1. input에 아무것도 입력하지 않았거나
+         * 2. 비밀번호 input과 비밀번호 확인 input의 값이 동일하지 않거나,
+         * 3. 비밀번호의 패턴이 정규표현식과 일치하지 않은 경우
+         */
+        const inp = document.querySelectorAll('input')
+        const email = document.querySelector('#email')
+        const password = document.querySelector('#password')
+        const passwordOk = document.querySelector('#passwordOk')
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', () => {
+            inp.forEach((item) =>
+                validate(item))
+        })
+
+        function validate(target) {
+            if (target.validity.valueMissing) {
+                target.setCustomValidity('아무것도 입력되지 않았다구요우!');
+            } else if (target.id === 'passowrdOk') {
+                if (target.value !== password.value) {
+                    target.setCustomValidity('비밀번호확인하셈')
+                } else {
+                    target.setCustomValidity('')
+                }
+            } else if (target.validity.patternMissMatch) {
+                target.setCustomValidity('대문자나 특수기호릏 하나 이상 포함하는 비밀번호를 8글자 이상 넣어주세요');
+            } else {
+                target.setCustomValidity('');
+            }
+        }
+
+        if (password.value !== passwordOk.value) {
+            alert('비밀번호 다시 입력하셈')
+        }
+    </script>
+</body>
+
+</html>
